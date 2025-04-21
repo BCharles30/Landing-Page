@@ -1,0 +1,55 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+
+export default function GlamGazeeLandingPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-800 to-yellow-400 flex flex-col items-center justify-center text-white p-6">
+      <motion.h1 
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-6xl font-bold mb-4 text-center drop-shadow-lg"
+      >
+        Glam Gazee Lash Bar
+      </motion.h1>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8 }}
+        className="text-lg md:text-xl text-center max-w-2xl mb-6"
+      >
+        Dedicated to providing top-tier lash services by our amazing professionals. Experience luxury lash sets starting at just <span className="font-bold">$99</span>.
+      </motion.p>
+
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }} 
+        animate={{ scale: 1, opacity: 1 }} 
+        transition={{ duration: 0.6 }}
+        className="w-full max-w-md"
+      >
+        <Card className="bg-white text-purple-900 shadow-xl rounded-2xl">
+          <CardContent className="p-6 flex flex-col gap-4 items-center">
+            <div className="text-2xl font-semibold text-center">
+              Book Your Glam Experience Today
+            </div>
+            <Button className="bg-purple-700 hover:bg-purple-800 text-white text-lg px-6 py-3 rounded-full">
+              Book Now
+            </Button>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      <div className="flex gap-2 mt-8">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="text-yellow-300 w-6 h-6" />
+        ))}
+      </div>
+      <div className="text-sm text-white mt-2">
+        Rated 5 stars by our fabulous clients
+      </div>
+    </div>
+  );
+}
